@@ -49,7 +49,6 @@
       node.enable = true;
       python.enable = true;
       shell.enable = true;
-      web.enable = true;
     };
     editors = {
       default = "nvim";
