@@ -20,6 +20,11 @@ in {
   config = mkIf cfg.enable {
     user.packages = with pkgs; [
       rustup
+
+      # I install these from nix, I don't want to use too many management systems and with this
+      # setup these will always be installed, in any system.
+      cargo-edit
+      cargo-outdated
     ];
 
     env.RUSTUP_HOME = "$XDG_DATA_HOME/rustup";

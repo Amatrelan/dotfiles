@@ -12,7 +12,7 @@ in {
   options.modules.editors.emacs = {
     enable = mkBoolOpt false;
     doom = {
-      enable  = mkBoolOpt true;
+      enable = mkBoolOpt true;
       fromSSH = mkBoolOpt false;
     };
   };
@@ -54,6 +54,11 @@ in {
       nodePackages.javascript-typescript-langserver
       # :lang latex & :lang org (latex previews)
       texlive.combined.scheme-medium
+
+      emacsPackages.vterm
+      # :lang nix
+      nixfmt
+      rnix-lsp
       # :lang rust
       rustfmt
       unstable.rust-analyzer

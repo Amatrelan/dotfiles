@@ -117,10 +117,10 @@ type = internal/date
 interval = 5
 
 label = %date%  %time%
-date = %A, %h %d
-date-alt = %Y-%m-%d
-time = %I:%M %p
-time-alt = %H:%M:%S
+date = %Y-%m-%d
+date-alt = %A, %h %d
+time = %H:%M:%S
+time-alt = %I:%M %p
 format-prefix = ""
 format-prefix-padding = 1
 ; format-prefix-background = ${colors.bg-alt}

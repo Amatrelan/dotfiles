@@ -50,7 +50,7 @@ in {
         "browser.download.dir" = "${config.user.home}/dl";
         # Don't use the built-in password manager; a nixos user is more likely
         # using an external one (you are using one, right?).
-        "signon.rememberSignons" = false;
+        "signon.rememberSignons" = true;
         # Do not check if Firefox is the default browser
         "browser.shell.checkDefaultBrowser" = false;
         # Disable the "new tab page" feature and show a blank tab instead

@@ -1,12 +1,12 @@
 [user]
-	name = Henrik Lissner
-	email = henrik@lissner.net
+	name = Jarmo Riikonen
+	email = amatrelan@gmail.com
 [core]
 	whitespace = trailing-space
 [init]
 	defaultBranch = main
 [github]
-	user = hlissner
+	user = amatrelan
 [rebase]
 	autosquash = true
 [push]
@@ -26,7 +26,7 @@
 	clean = git-lfs clean -- %f
 [url "https://github.com/"]
     insteadOf = gh:
-[url "git@github.com:hlissner/"]
+[url "git@github.com:amatrelan/"]
     insteadOf = gh:/
 [url "https://gitlab.com/"]
     insteadOf = gl:
