@@ -10,10 +10,7 @@ stdenv.mkDerivation {
     sha256 = "MmVPh8edSw/h+3uvYbYHQLX/66pY5Yk0v/OCL7RayBE=";
   };
 
-  buildInputs = with my; [
-    trackma
-    anime-downloader
-  ];
+  buildInputs = with my; [ trackma anime-downloader ];
 
   phases = "installPhase";
   installPhase = ''
@@ -28,6 +25,6 @@ stdenv.mkDerivation {
     description = "popcorn anime-downloader + trackma wrapper";
     license = lib.licenses.gpl3;
     platforms = [ "x86_64-linux" ];
-    maintainers = [];
+    maintainers = [ ];
   };
 }

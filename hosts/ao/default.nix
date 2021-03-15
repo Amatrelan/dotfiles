@@ -2,8 +2,7 @@
 
 { config, lib, ... }:
 
-with lib.my;
-{
+with lib.my; {
   imports = [
     ../server.nix
     ../home.nix
@@ -13,7 +12,6 @@ with lib.my;
     ./modules/gitea.nix
     ./modules/bitwarden.nix
   ];
-
 
   ## Modules
   modules = {
@@ -39,7 +37,7 @@ with lib.my;
     forceSSL = true;
     enableACME = true;
     locations = {
-      "~* \.(?:ico|css|map|js|gif|jpe?g|png|ttf|woff)$".extraConfig = ''
+      "~* .(?:ico|css|map|js|gif|jpe?g|png|ttf|woff)$".extraConfig = ''
         access_log off;
         expires 30d;
         add_header Pragma public;

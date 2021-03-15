@@ -4,7 +4,7 @@
   modules.services.bitwarden.enable = true;
 
   services.bitwarden_rs.config = {
-    signupsAllowed = false;
+    signupsAllowed = true;
     invitationsAllowed = true;
     domain = "https://p.v0.io";
     httpPort = 8002;

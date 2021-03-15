@@ -29,7 +29,8 @@
 
   hardware.pulseaudio.daemon.config = {
     default-sample-channels = 6;
-    enable-lfe-remixing = "yes";
+    remixing-produce-lfe = "yes";
+    remixing-consume-lfe = "yes";
   };
 
   hardware.pulseaudio.extraConfig = ''
@@ -65,31 +66,49 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home/amatrelan/Org" = {
+  fileSystems."/home/amatrelan/org" = {
     device = "//192.168.100.11/amatrelan/Org";
     fsType = "cifs";
     options = let
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      automount_opts =
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in ["${automount_opts},credentials=/etc/nixos/smb-secrets" "uid=amatrelan" "gid=users" "workgroup=WORKGROUP"];
+    in [
+      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+      "uid=amatrelan"
+      "gid=users"
+      "workgroup=WORKGROUP"
+    ];
   };
 
-  fileSystems."/home/amatrelan/Projects.bak" = {
+  fileSystems."/home/amatrelan/projects-backup" = {
     device = "//192.168.100.11/amatrelan/Projects";
     fsType = "cifs";
     options = let
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      automount_opts =
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in ["${automount_opts},credentials=/etc/nixos/smb-secrets" "uid=amatrelan" "gid=users" "workgroup=WORKGROUP"];
+    in [
+      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+      "uid=amatrelan"
+      "gid=users"
+      "workgroup=WORKGROUP"
+    ];
   };
 
-  fileSystems."/home/amatrelan/Photos" = {
+  fileSystems."/home/amatrelan/photos" = {
     device = "//192.168.100.11/amatrelan/Photos";
     fsType = "cifs";
     options = let
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      automount_opts =
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in ["${automount_opts},credentials=/etc/nixos/smb-secrets" "uid=amatrelan" "gid=users" "workgroup=WORKGROUP"];
+    in [
+      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+      "uid=amatrelan"
+      "gid=users"
+      "workgroup=WORKGROUP"
+    ];
   };
 
   swapDevices =

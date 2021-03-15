@@ -22,7 +22,7 @@ let
     doCheck = false;
   };
 in buildPythonApplication rec {
-  pname   = "anime-downloader";
+  pname = "anime-downloader";
   version = "5.0.7";
 
   src = fetchPypi {
@@ -53,6 +53,6 @@ in buildPythonApplication rec {
     description = "A simple but powerful anime downloader and streamer.";
     license = lib.licenses.unlicense;
     platforms = [ "x86_64-linux" ];
-    maintainers = [];
+    maintainers = [ ];
   };
 }

@@ -8,11 +8,6 @@ in {
     enable = mkBoolOpt false;
   };
 
-  config = mkIf cfg.enable {
-    user.packages = with pkgs; [
-      dialog
-      openssl
-      lutris
-    ];
-  };
+  config =
+    mkIf cfg.enable { user.packages = with pkgs; [ dialog openssl lutris ]; };
 }

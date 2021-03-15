@@ -166,7 +166,7 @@ module Hey
   defcmd [:upgrade, :up] do
     desc "Update all flakes and rebuild system"
     lambda do |_args|
-      update
+      :update
       rebuild :switch
     end
   end

@@ -21,6 +21,7 @@ c.content.blocking.method = "auto"
 c.content.blocking.hosts.lists = [
     'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',
     'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext'
+    'https://easylist.to/easylist/easylist.txt'
     # 'https://www.malwaredomainlist.com/hostslist/hosts.txt',
     # 'http://someonewhocares.org/hosts/hosts',
     # 'http://winhelp2002.mvps.org/hosts.zip',

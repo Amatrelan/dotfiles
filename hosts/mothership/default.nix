@@ -1,9 +1,5 @@
-{ pkgs, config, lib, ... }:
-{
-  imports = [
-    ../home.nix
-    ./hardware-configuration.nix
-  ];
+{ pkgs, config, lib, ... }: {
+  imports = [ ../home.nix ./hardware-configuration.nix ];
 
   ## Modules
   modules = {
@@ -16,8 +12,8 @@
         signal.enable = true;
       };
       browsers = {
-        default = "brave";
-        brave.enable = true;
+        default = "firefox";
+        # brave.enable = true;
         firefox.enable = true;
         qutebrowser.enable = true;
       };
@@ -39,9 +35,7 @@
         default = "xst";
         st.enable = true;
       };
-      vm = {
-        qemu.enable = true;
-      };
+      vm = { qemu.enable = true; };
     };
     dev = {
       rust.enable = true;
@@ -59,10 +53,10 @@
       adl.enable = true;
       # bitwarden.enable = true;
       direnv.enable = true;
-      git.enable    = true;
-      gnupg.enable  = true;
-      tmux.enable   = true;
-      zsh.enable    = true;
+      git.enable = true;
+      gnupg.enable = true;
+      tmux.enable = true;
+      zsh.enable = true;
     };
     services = {
       ssh.enable = true;
@@ -71,7 +65,6 @@
     };
     theme.active = "alucard";
   };
-
 
   ## Local config
   programs.ssh.startAgent = true;
@@ -83,16 +76,15 @@
   # generated config replicates the default behaviour.
   networking.useDHCP = false;
 
-
   ## Personal backups
   # Syncthing is a bit heavy handed for my needs, so rsync to my NAS instead.
   systemd = {
     services.backups = {
       description = "Backup /usr/store to NAS";
       wants = [ "usr-drive.mount" ];
-      path  = [ pkgs.rsync ];
+      path = [ pkgs.rsync ];
       environment = {
-        SRC_DIR  = "/usr/store";
+        SRC_DIR = "/usr/store";
         DEST_DIR = "/usr/drive";
       };
       script = ''

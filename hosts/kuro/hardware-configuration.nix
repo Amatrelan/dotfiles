@@ -4,9 +4,10 @@
   imports = [ "${modulesPath}/installer/scan/not-detected.nix" ];
 
   boot = {
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-    initrd.kernelModules = [];
-    extraModulePackages = [];
+    initrd.availableKernelModules =
+      [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+    initrd.kernelModules = [ ];
+    extraModulePackages = [ ];
     kernelModules = [ "kvm-amd" ];
     kernelParams = [
       # HACK Disables fixes for spectre, meltdown, L1TF and a number of CPU
@@ -79,18 +80,29 @@
       device = "kiiro:/volume1/homes/hlissner/Drive";
       fsType = "nfs";
       options = [
-        "nofail" "noauto" "noatime" "x-systemd.automount" "x-systemd.idle-timeout=5min"
-        "nodev" "nosuid" "noexec"
+        "nofail"
+        "noauto"
+        "noatime"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=5min"
+        "nodev"
+        "nosuid"
+        "noexec"
       ];
     };
     "/usr/store" = {
       device = "/dev/disk/by-label/store";
       fsType = "ext4";
       options = [
-        "noauto" "noatime" "x-systemd.automount" "x-systemd.idle-timeout=5min"
-        "nodev" "nosuid" "noexec"
+        "noauto"
+        "noatime"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=5min"
+        "nodev"
+        "nosuid"
+        "noexec"
       ];
     };
   };
-  swapDevices = [];
+  swapDevices = [ ];
 }

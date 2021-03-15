@@ -15,10 +15,11 @@ buildPythonApplication rec {
   pythonImportsCheck = [ "trackma" ];
 
   meta = with lib; {
-    homepage    = "https://github.com/z411/trackma";
-    description = "Open multi-site list manager for Unix-like systems. (ex-wMAL)";
-    license     = licenses.gpl3;
+    homepage = "https://github.com/z411/trackma";
+    description =
+      "Open multi-site list manager for Unix-like systems. (ex-wMAL)";
+    license = licenses.gpl3;
     platforms = [ "x86_64-linux" ];
-    maintainers = [];
+    maintainers = [ ];
   };
 }

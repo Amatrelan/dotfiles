@@ -1,15 +1,14 @@
 { config, lib, ... }:
 
-with lib;
-{
-  networking.hosts =
-    let hostConfig = {
-          "192.168.100.11" = [ "drone" ];
-          "192.168.100.12" = [ "frigate" ];
-        };
-        hosts = flatten (attrValues hostConfig);
-        hostName = config.networking.hostName;
-    in mkIf (builtins.elem hostName hosts) hostConfig;
+with lib; {
+  networking.hosts = let
+    hostConfig = {
+      "192.168.100.11" = [ "drone" ];
+      "192.168.100.12" = [ "frigate" ];
+    };
+    hosts = flatten (attrValues hostConfig);
+    hostName = config.networking.hostName;
+  in mkIf (builtins.elem hostName hosts) hostConfig;
 
   ## Location config -- since Toronto is my 127.0.0.1
   time.timeZone = mkDefault "Europe/Helsinki";
@@ -25,11 +24,11 @@ with lib;
   } else if config.time.timeZone == "Europe/Helsinki" then {
     latitude = 60.98267;
     longitude = 25.266151;
-  } else {});
+  } else
+    { });
 
   # So thw bitwarden CLI knows where to find my server.
-  # modules.shell.bitwarden.config.server = "p.v0.io";
-
+  modules.shell.bitwarden.config.server = "p.v0.io";
 
   ## Not using syncthing atm
   # services.syncthing.declarative = {

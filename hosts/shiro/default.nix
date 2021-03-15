@@ -1,11 +1,7 @@
 # Shiro -- my laptop
 
-{ ... }:
-{
-  imports = [
-    ../home.nix
-    ./hardware-configuration.nix
-  ];
+{ ... }: {
+  imports = [ ../home.nix ./hardware-configuration.nix ];
 
   ## Modules
   modules = {
@@ -32,14 +28,14 @@
         default = "xst";
         st.enable = true;
       };
-      vm = {};
+      vm = { };
     };
     editors = {
       default = "nvim";
       emacs.enable = true;
       vim.enable = true;
     };
-    dev = {};
+    dev = { };
     shell = {
       adl.enable = true;
       bitwarden.enable = true;
@@ -55,7 +51,6 @@
     };
     theme.active = "alucard";
   };
-
 
   ## Local config
   programs.ssh.startAgent = true;

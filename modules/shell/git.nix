@@ -2,20 +2,18 @@
 
 with lib;
 with lib.my;
-let cfg = config.modules.shell.git;
-    configDir = config.dotfiles.configDir;
+let
+  cfg = config.modules.shell.git;
+  configDir = config.dotfiles.configDir;
 in {
-  options.modules.shell.git = {
-    enable = mkBoolOpt false;
-  };
+  options.modules.shell.git = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
     user.packages = with pkgs; [
       gitAndTools.gh
       gitAndTools.git-open
       gitAndTools.diff-so-fancy
-      (mkIf config.modules.shell.gnupg.enable
-        gitAndTools.git-crypt)
+      (mkIf config.modules.shell.gnupg.enable gitAndTools.git-crypt)
     ];
 
     home.configFile = {
