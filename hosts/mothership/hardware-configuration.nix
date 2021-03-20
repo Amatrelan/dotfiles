@@ -47,7 +47,7 @@
     '';
 
     screenSection = ''
-      Option         "metamodes" "DP-2: nvidia-auto-select +0+1080, DP-4: nvidia-auto-select +0+0"
+      Option         "metamodes" "DP-2: 5120x1440 +0+1080, DP-4: nvidia-auto-select +0+0"
       Option         "SLI" "Off"
       Option         "MultiGPU" "Off"
       Option         "BaseMosaic" "off"

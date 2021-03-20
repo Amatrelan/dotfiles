@@ -13,7 +13,7 @@ in {
 
     # master.services.picom.enable = true;
     services = {
-      redshift.enable = true;
+      redshift.enable = false;
       xserver = {
         enable = true;
         windowManager.default = "stumpwm";
