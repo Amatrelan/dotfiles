@@ -24,7 +24,8 @@ in {
     user.packages = with pkgs; [
       ## Emacs itself
       binutils # native-comp needs 'as', provided by this
-      emacsPgtkGcc # 28 + pgtk + native-comp
+      # emacsPgtkGcc # 28 + pgtk + native-comp
+      emacs
 
       ## Doom dependencies
       git
@@ -52,16 +53,26 @@ in {
       # :lang javascript
       nodePackages.javascript-typescript-langserver
       # :lang latex & :lang org (latex previews)
-      texlive.combined.scheme-medium
+      texlive.combined.scheme-full
 
-      libtool
-      emacsPackages.vterm
       # :lang nix
       nixfmt
       rnix-lsp
       # :lang rust
       rustfmt
       unstable.rust-analyzer
+      wordnet
+      graphviz
+
+      (makeDesktopItem {
+        name = "Org-protocol";
+        desktopName = "Org-protocol";
+        exec = "emacsclient %u";
+        icon = "emacs-icon";
+        type = "Application";
+        terminal = "false";
+        mimeType = "x-scheme-handler/org-protocol";
+      })
     ];
 
     env.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];

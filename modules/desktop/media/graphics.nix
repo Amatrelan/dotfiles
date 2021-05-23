@@ -17,9 +17,9 @@ in {
     enable = mkBoolOpt false;
     tools.enable = mkBoolOpt true;
     raster.enable = mkBoolOpt true;
-    vector.enable = mkBoolOpt true;
+    vector.enable = mkBoolOpt false;
     sprites.enable = mkBoolOpt true;
-    models.enable = mkBoolOpt false;
+    models.enable = mkBoolOpt true;
   };
 
   config = mkIf cfg.enable {

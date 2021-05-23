@@ -45,7 +45,8 @@ with lib.my; {
 
   # Use the latest kernel
   boot = {
-    kernelPackages = mkDefault pkgs.linuxPackages_5_10;
+    # kernelPackages = mkDefault pkgs.linuxPackages_5_10;
+    kernelPackages = mkDefault pkgs.linuxPackages;
     loader = {
       efi.canTouchEfiVariables = mkDefault true;
       systemd-boot.configurationLimit = 10;
@@ -59,9 +60,13 @@ with lib.my; {
     cached-nix-shell
     coreutils
     git
+    gnumake
+    htop
+    unzip
     vim
     wget
-    gnumake
-    unzip
+    pkg-config
+    openssl
+    openssl.dev
   ];
 }

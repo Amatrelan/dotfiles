@@ -10,6 +10,11 @@ with lib; {
     hostName = config.networking.hostName;
   in mkIf (builtins.elem hostName hosts) hostConfig;
 
+  networking.extraHosts = ''
+    192.168.100.11 drone
+    192.168.100.12 frigate
+  '';
+
   ## Location config -- since Toronto is my 127.0.0.1
   time.timeZone = mkDefault "Europe/Helsinki";
   i18n.defaultLocale = mkDefault "en_US.UTF-8";
@@ -28,7 +33,8 @@ with lib; {
     { });
 
   # So thw bitwarden CLI knows where to find my server.
-  modules.shell.bitwarden.config.server = "p.v0.io";
+  # modules.shell.bitwarden.config.server = "192.168.100.23";
+  # modules.shell.bitwarden.config.server = "https://api.bitwarden.com";
 
   ## Not using syncthing atm
   # services.syncthing.declarative = {

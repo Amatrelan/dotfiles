@@ -3,17 +3,12 @@
 with lib;
 with lib.my;
 let
-  cfg = config.modules.desktop.bspwm;
+  cfg = config.modules.desktop.spectrwm;
   configDir = config.dotfiles.configDir;
 in {
-  options.modules.desktop.bspwm = { enable = mkBoolOpt false; };
+  options.modules.desktop.spectrwm = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
-    modules.theme.onReload.bspwm = ''
-      ${pkgs.bspwm}/bin/bspc wm -r
-      source $XDG_CONFIG_HOME/bspwm/bspwmrc
-    '';
-
     environment.systemPackages = with pkgs; [
       lightdm
       dunst
@@ -25,16 +20,14 @@ in {
     ];
 
     services = {
-      picom.enable = false;
-      redshift.enable = false;
       xserver = {
         enable = true;
         displayManager = {
-          defaultSession = "none+bspwm";
+          defaultSession = "none+spectrwm";
           lightdm.enable = true;
           lightdm.greeters.mini.enable = true;
         };
-        windowManager.bspwm.enable = true;
+        windowManager.spectrwm.enable = true;
       };
     };
 
@@ -49,11 +42,7 @@ in {
 
     # link recursively so other modules can link files in their folders
     home.configFile = {
-      "sxhkd".source = "${configDir}/sxhkd";
-      "bspwm" = {
-        source = "${configDir}/bspwm";
-        recursive = true;
-      };
+      "spectrwm".source = "${configDir}/spectrwm";
     };
   };
 }

@@ -21,7 +21,8 @@ c.content.blocking.method = "auto"
 c.content.blocking.hosts.lists = [
     'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',
     'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext'
-    'https://easylist.to/easylist/easylist.txt'
+    # 'https://easylist.to/easylist/easylist.txt'
+    # 'https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt'
     # 'https://www.malwaredomainlist.com/hostslist/hosts.txt',
     # 'http://someonewhocares.org/hosts/hosts',
     # 'http://winhelp2002.mvps.org/hosts.zip',
@@ -45,6 +46,8 @@ c.tabs.show = 'multiple'
 c.tabs.title.format = '{audio}{current_title} - {host}'
 c.tabs.title.format_pinned = ''
 c.window.title_format = '{current_title} - {host} - qutebrowser'
+
+c.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 
 
 #

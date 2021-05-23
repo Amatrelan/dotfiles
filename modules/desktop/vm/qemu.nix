@@ -7,7 +7,7 @@ in {
   options.modules.desktop.vm.qemu = { enable = mkBoolOpt false; };
 
   config =
-    mkIf cfg.enable { environment.systemPackages = with pkgs; [ qemu ]; };
+    mkIf cfg.enable { environment.systemPackages = with pkgs; [ qemu qemu_kvm ]; };
 }
 
 # Creating an image:

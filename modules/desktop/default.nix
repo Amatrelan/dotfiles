@@ -39,10 +39,12 @@ in {
       enableGhostscriptFonts = true;
       fonts = with pkgs; [
         ubuntu_font_family
+        hack-font
         dejavu_fonts
         symbola
         noto-fonts
         noto-fonts-cjk
+        source-code-pro
       ];
     };
 
@@ -54,8 +56,8 @@ in {
       backend = "glx";
       vSync = true;
       opacityRules = [
-        # "100:class_g = 'Firefox'"
-        # "100:class_g = 'Vivaldi-stable'"
+        "100:class_g = 'Firefox'"
+        "100:class_g = 'Vivaldi-stable'"
         "100:class_g = 'VirtualBox Machine'"
         # Art/image programs where we need fidelity
         "100:class_g = 'Gimp'"
@@ -66,6 +68,7 @@ in {
         "100:class_g = 'mpv'"
         "100:class_g = 'Rofi'"
         "100:class_g = 'Peek'"
+        "100:name *= 'Netflix'"
         "100:_NET_WM_STATE@:32a = '_NET_WM_STATE_FULLSCREEN'"
       ];
       shadowExclude = [

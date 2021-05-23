@@ -23,6 +23,13 @@
     nvidia.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+
+  services.xserver.layout = "us,fi";
+  services.xserver.xkbOptions = "grp:alt_shift_toggle";
+
   nix.maxJobs = lib.mkDefault 12;
   powerManagement.cpuFreqGovernor = "performance";
   hardware.cpu.amd.updateMicrocode = true;
@@ -47,7 +54,8 @@
     '';
 
     screenSection = ''
-      Option         "metamodes" "DP-2: 5120x1440 +0+1080, DP-4: nvidia-auto-select +0+0"
+      # Option         "metamodes" "DP-2: 5120x1440 +0+1080, DP-4: nvidia-auto-select +0+0"
+      Option         "metamodes" "DP-2: 5120x1440 +0+1080, DP-4: nvidia-auto-select +1892+0"
       Option         "SLI" "Off"
       Option         "MultiGPU" "Off"
       Option         "BaseMosaic" "off"
@@ -66,50 +74,50 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home/amatrelan/org" = {
-    device = "//192.168.100.11/amatrelan/Org";
-    fsType = "cifs";
-    options = let
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  # fileSystems."/home/amatrelan/org" = {
+  #   device = "//192.168.100.11/amatrelan/Org";
+  #   fsType = "cifs";
+  #   options = let
+  #     automount_opts =
+  #       "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in [
-      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
-      "uid=amatrelan"
-      "gid=users"
-      "workgroup=WORKGROUP"
-    ];
-  };
+  #   in [
+  #     "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+  #     "uid=amatrelan"
+  #     "gid=users"
+  #     "workgroup=WORKGROUP"
+  #   ];
+  # };
 
-  fileSystems."/home/amatrelan/projects-backup" = {
-    device = "//192.168.100.11/amatrelan/Projects";
-    fsType = "cifs";
-    options = let
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  # fileSystems."/home/amatrelan/projects-backup" = {
+  #   device = "//192.168.100.11/amatrelan/Projects";
+  #   fsType = "cifs";
+  #   options = let
+  #     automount_opts =
+  #       "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in [
-      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
-      "uid=amatrelan"
-      "gid=users"
-      "workgroup=WORKGROUP"
-    ];
-  };
+  #   in [
+  #     "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+  #     "uid=amatrelan"
+  #     "gid=users"
+  #     "workgroup=WORKGROUP"
+  #   ];
+  # };
 
-  fileSystems."/home/amatrelan/photos" = {
-    device = "//192.168.100.11/amatrelan/Photos";
-    fsType = "cifs";
-    options = let
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  # fileSystems."/home/amatrelan/photos" = {
+  #   device = "//192.168.100.11/amatrelan/Photos";
+  #   fsType = "cifs";
+  #   options = let
+  #     automount_opts =
+  #       "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in [
-      "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
-      "uid=amatrelan"
-      "gid=users"
-      "workgroup=WORKGROUP"
-    ];
-  };
+  #   in [
+  #     "${automount_opts},credentials=${config.dotfiles.dir}/smb-secrets"
+  #     "uid=amatrelan"
+  #     "gid=users"
+  #     "workgroup=WORKGROUP"
+  #   ];
+  # };
 
   swapDevices =
     [{ device = "/dev/disk/by-uuid/33c6b470-3c79-4706-9192-257a157d8e2d"; }];

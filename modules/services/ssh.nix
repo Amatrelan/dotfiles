@@ -10,14 +10,14 @@ in {
     services.openssh = {
       enable = true;
       challengeResponseAuthentication = false;
-      passwordAuthentication = false;
+      passwordAuthentication = true;
     };
 
-    user.openssh.authorizedKeys.keys = if config.user.name == "hlissner" then
-      [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB71rSnjuC06Qq3NLXQJwSz7jazoB+umydddrxL6vg1a henrik@lissner.net"
-      ]
-    else
-      [ ];
+    # user.openssh.authorizedKeys.keys = if config.user.name == "hlissner" then
+    #   [
+    #     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB71rSnjuC06Qq3NLXQJwSz7jazoB+umydddrxL6vg1a henrik@lissner.net"
+    #   ]
+    # else
+    #   [ ];
   };
 }
