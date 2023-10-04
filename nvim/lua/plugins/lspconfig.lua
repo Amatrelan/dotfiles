@@ -89,6 +89,9 @@ function Plugin.config()
 			["lua_ls"] = function()
 				require("plugins.lsp.lua_ls")
 			end,
+			rust_analyzer = function()
+				require("plugins.lsp.rust_analyzer")
+			end,
 		}
 	})
 end
