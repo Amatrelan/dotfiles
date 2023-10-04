@@ -25,3 +25,7 @@ target = "$HOME/.profile"
 [links.git]
 source = "git"
 target = "$HOME/.config/git"
+
+[links.qutebrowser]
+source = "qutebrowser"
+target = "$HOME/.config/qutebrowser/"
