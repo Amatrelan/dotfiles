@@ -1,0 +1,27 @@
+[links.neovim]
+source = "nvim"
+target = "$HOME/.config/nvim/"
+
+[links.nushell]
+source = "nushell"
+target = "$HOME/.config/nushell"
+
+[links.hypr]
+source = "hypr"
+target = "$HOME/.config/hypr/"
+
+[links.waybar]
+source = "waybar"
+target = "$HOME/.config/waybar/"
+
+[links.kitty]
+source = "kitty"
+target = "$HOME/.config/kitty"
+
+[links.profile]
+source = "dot_profile"
+target = "$HOME/.profile"
+
+[links.git]
+source = "git"
+target = "$HOME/.config/git"

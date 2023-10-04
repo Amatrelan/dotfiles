@@ -1,0 +1,16 @@
+[user]
+	name = Jarmo Riikonen
+	email = amatrelan@gmail.com
+
+[core]
+	whitespace = trailing-space
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSquash = true
+	default = current
+
+[pull]
+	rebase = true
