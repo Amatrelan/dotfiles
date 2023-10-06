@@ -17,8 +17,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set default shell and terminal
-export SHELL=/usr/bin/zsh
-export TERMINAL_COMMAND=/usr/share/sway/scripts/foot.sh
+export SHELL=/usr/bin/nu
 
 # add default location for zeit.db
 export ZEIT_DB="$HOME/config/zeit.db"
@@ -29,10 +28,6 @@ if systemd-detect-virt -q; then
     # if the system is running inside a virtual machine, disable hardware cursors
     export WLR_NO_HARDWARE_CURSORS=1
 fi
-
-set -a
-. "$HOME/.config/user-dirs.dirs"
-set +a
 
 if [ -n "$(ls "$HOME"/.config/profile.d 2>/dev/null)" ]; then
     for f in "$HOME"/.config/profile.d/*; do

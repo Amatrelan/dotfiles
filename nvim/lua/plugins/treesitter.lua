@@ -37,6 +37,7 @@ Plugin.opts = {
 		}
 	},
 	ensure_installed = {
+		"javascript",
 		"lua",
 		"markdown",
 		"markdown_inline",

@@ -10,4 +10,4 @@ load("config.commands")
 require("config.lazy")
 
 
-pcall(vim.cmd.colorscheme, "catppuccin-macchiato")
+pcall(vim.cmd.colorscheme, "gruvbox")

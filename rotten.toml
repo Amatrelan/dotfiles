@@ -1,31 +1,35 @@
-[links.neovim]
-source = "nvim"
-target = "$HOME/.config/nvim/"
-
-[links.nushell]
-source = "nushell"
-target = "$HOME/.config/nushell"
+[links.git]
+source = "git"
+target = "$HOME/.config/git"
 
 [links.hypr]
 source = "hypr"
 target = "$HOME/.config/hypr/"
 
-[links.waybar]
-source = "waybar"
-target = "$HOME/.config/waybar/"
-
 [links.kitty]
 source = "kitty"
 target = "$HOME/.config/kitty"
 
-[links.profile]
-source = "dot_profile"
-target = "$HOME/.profile"
+[links.mako]
+source = "mako"
+target = "$HOME/.config/mako"
 
-[links.git]
-source = "git"
-target = "$HOME/.config/git"
+[links.nushell]
+source = "nushell"
+target = "$HOME/.config/nushell"
+
+[links.neovim]
+source = "nvim"
+target = "$HOME/.config/nvim/"
 
 [links.qutebrowser]
 source = "qutebrowser"
 target = "$HOME/.config/qutebrowser/"
+
+[links.waybar]
+source = "waybar"
+target = "$HOME/.config/waybar/"
+
+[links.profile]
+source = "dot_profile"
+target = "$HOME/.profile"
