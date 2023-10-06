@@ -33,3 +33,7 @@ target = "$HOME/.config/waybar/"
 [links.profile]
 source = "dot_profile"
 target = "$HOME/.profile"
+
+[links.scripts]
+source = "scripts"
+target = "$HOME/.local/bin"
