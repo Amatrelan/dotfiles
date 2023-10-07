@@ -1,39 +1,39 @@
 [links.git]
-source = "git"
-target = "$HOME/.config/git"
+from = "git"
+to = "$HOME/.config/git"
 
 [links.hypr]
-source = "hypr"
-target = "$HOME/.config/hypr/"
+from = "hypr"
+to = "$HOME/.config/hypr/"
 
 [links.kitty]
-source = "kitty"
-target = "$HOME/.config/kitty"
+from = "kitty"
+to = "$HOME/.config/kitty"
 
 [links.mako]
-source = "mako"
-target = "$HOME/.config/mako"
+from = "mako"
+to = "$HOME/.config/mako"
 
 [links.nushell]
-source = "nushell"
-target = "$HOME/.config/nushell"
+from = "nushell"
+to = "$HOME/.config/nushell"
 
 [links.neovim]
-source = "nvim"
-target = "$HOME/.config/nvim/"
+from = "nvim"
+to = "$HOME/.config/nvim/"
 
 [links.qutebrowser]
-source = "qutebrowser"
-target = "$HOME/.config/qutebrowser/"
+from = "qutebrowser"
+to = "$HOME/.config/qutebrowser/"
 
 [links.waybar]
-source = "waybar"
-target = "$HOME/.config/waybar/"
+from = "waybar"
+to = "$HOME/.config/waybar/"
 
 [links.profile]
-source = "dot_profile"
-target = "$HOME/.profile"
+from = "dot_profile"
+to = "$HOME/.profile"
 
 [links.scripts]
-source = "scripts"
-target = "$HOME/.local/bin"
+from = "scripts"
+to = "$HOME/.local/bin"

@@ -26,6 +26,7 @@ c.downloads.position = "bottom"
 config.bind("<Ctrl-n>", "completion-item-focus next", mode="command")
 config.bind("<Ctrl-p>", "completion-item-focus prev", mode="command")
 config.bind("<Ctrl-p>", "completion-item-focus prev", mode="command")
+config.bind(",m", "spawn mpv {url}")
 
 c.editor.command = ["kitty", "-e", "nvim", "{}", "+call cursor({line},{column0})"]
 
