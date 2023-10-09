@@ -82,6 +82,7 @@ function Plugin.config()
 			"lua_ls",
 			"pyright",
 			"rust_analyzer",
+			"taplo",
 		},
 
 		handlers = {
