@@ -50,3 +50,7 @@ to = "$HOME/.profile"
 [links.scripts]
 from = "scripts"
 to = "$HOME/.local/bin"
+
+[links."user-dirs.dirs"]
+source = "user-dirs.dirs"
+target = "$HOME/.config/user-dirs.dirs"

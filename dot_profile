@@ -22,6 +22,12 @@ export SHELL=/usr/bin/nu
 # add default location for zeit.db
 export ZEIT_DB="$HOME/config/zeit.db"
 
+
+export XDG_CONFIG_HOME = $HOME/.config
+export XDG_CACHE_HOME = $HOME/.cache
+export XDG_DATA_HOME = $HOME/.local/share
+export XDG_STATE_HOME = $HOME/.local/state
+
 # Disable hardware cursors. This might fix issues with
 # disappearing cursors
 if systemd-detect-virt -q; then
@@ -35,4 +41,5 @@ if [ -n "$(ls "$HOME"/.config/profile.d 2>/dev/null)" ]; then
         . "$f"
     done
 fi
-. "$HOME/.cargo/env"
+
+export PATH="$HOME/.local/bin:$PATH"
