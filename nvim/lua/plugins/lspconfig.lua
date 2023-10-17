@@ -79,9 +79,12 @@ function Plugin.config()
 		ensure_installed = {
 			"bashls",
 			"eslint",
+			"html",
+			"ltex",
 			"lua_ls",
 			"pyright",
 			"rust_analyzer",
+			"tailwindcss",
 			"taplo",
 		},
 

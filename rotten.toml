@@ -11,6 +11,14 @@ mothership = [
 	"git",
 ]
 
+battleship = [
+	"neovim",
+	"nushell",
+	"profile",
+	"scripts",
+	"git",
+]
+
 [links.git]
 from = "git"
 to = "$HOME/.config/git"
