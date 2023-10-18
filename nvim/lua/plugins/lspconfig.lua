@@ -83,6 +83,7 @@ function Plugin.config()
 			"ltex",
 			"lua_ls",
 			"pyright",
+			"rnix",
 			"rust_analyzer",
 			"tailwindcss",
 			"taplo",
