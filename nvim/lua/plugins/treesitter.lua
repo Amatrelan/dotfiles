@@ -41,6 +41,7 @@ Plugin.opts = {
 		"lua",
 		"markdown",
 		"markdown_inline",
+		"nix",
 		"python",
 		"rust",
 		"toml",
