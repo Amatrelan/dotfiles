@@ -1,14 +1,15 @@
 [profiles]
 mothership = [
-	"neovim",
+	"git",
 	"hypr",
 	"kitty",
 	"mako",
+	"neovim",
 	"nushell",
-	"waybar",
 	"profile",
 	"scripts",
-	"git",
+	"swayidle",
+	"waybar",
 ]
 
 battleship = [
@@ -60,5 +61,9 @@ from = "scripts"
 to = "$HOME/.local/bin"
 
 [links."user-dirs.dirs"]
-source = "user-dirs.dirs"
-target = "$HOME/.config/user-dirs.dirs"
+from = "user-dirs.dirs"
+to = "$HOME/.config/user-dirs.dirs"
+
+[links.swayidle]
+from = "swayidle"
+to = "$HOME/.config/swayidle"

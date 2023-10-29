@@ -37,6 +37,7 @@ Plugin.opts = {
 		}
 	},
 	ensure_installed = {
+		"devicetree",
 		"javascript",
 		"lua",
 		"markdown",
@@ -47,6 +48,7 @@ Plugin.opts = {
 		"toml",
 		"vim",
 		"vimdoc",
+		"wgsl",
 		"yuck",
 	}
 }

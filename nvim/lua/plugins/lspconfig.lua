@@ -87,6 +87,7 @@ function Plugin.config()
 			"rust_analyzer",
 			"tailwindcss",
 			"taplo",
+			"wgsl_analyzer",
 		},
 
 		handlers = {
