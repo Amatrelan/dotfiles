@@ -4,7 +4,7 @@
 	"height": 16,
 	"margin-top": 0,
 	"margin-bottom": 0,
-	"margin-left": 0,
+	"margin-left  ": 0,
 	"margin-right": 0,
 	"modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
 	"modules-center": ["cpu", "memory", "disk"],
@@ -13,10 +13,10 @@
 	// Modules configuration
 
 	"clock": {
-		"format": " {:%H:%M}",
+		"format": "  {:%H:%M}",
 		"tooltip": "true",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": " {:%d/%m}"
+		"format-alt": "  {:%d/%m}"
 	},
 
 
