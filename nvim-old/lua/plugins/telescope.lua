@@ -6,6 +6,7 @@ Plugin.branch = "0.1.x"
 Plugin.dependencies = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{ "nvim-telescope/telescope-ui-select.nvim" },
 }
 
 Plugin.cmd = { "Telescope" }
@@ -27,6 +28,7 @@ end
 
 function Plugin.config()
 	require("telescope").load_extension("fzf")
+	require("telescope").load_extension("ui-select")
 end
 
 return Plugin

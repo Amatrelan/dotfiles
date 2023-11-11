@@ -42,7 +42,7 @@ to = "$HOME/.config/nushell"
 
 [links.neovim]
 from = "nvim"
-to = "$HOME/.config/nvim/"
+to = "$HOME/.config/nvim/lua/custom"
 
 [links.qutebrowser]
 from = "qutebrowser"
