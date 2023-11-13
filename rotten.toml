@@ -10,14 +10,16 @@ mothership = [
 	"scripts",
 	"swayidle",
 	"waybar",
+  "tmux",
 ]
 
 battleship = [
+	"git",
 	"neovim",
 	"nushell",
 	"profile",
 	"scripts",
-	"git",
+  "tmux",
 ]
 
 [links.git]
@@ -67,3 +69,7 @@ to = "$HOME/.config/user-dirs.dirs"
 [links.swayidle]
 from = "swayidle"
 to = "$HOME/.config/swayidle"
+
+[links.tmux]
+from = "tmux"
+to = "$HOME/.config/tmux"
