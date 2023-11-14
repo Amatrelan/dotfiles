@@ -38,6 +38,7 @@ local Plugins = {
         "lua",
         "markdown",
         "markdown_inline",
+        "nix",
         "python",
         "regex",
         "rust",
