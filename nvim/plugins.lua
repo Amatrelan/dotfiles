@@ -28,9 +28,19 @@ local Plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "rust",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "json",
+        "json5",
         "lua",
+        "markdown",
+        "markdown_inline",
         "python",
+        "regex",
+        "rust",
       }
     },
   },
