@@ -49,8 +49,8 @@ local Plugins = {
       'nvim-telescope/telescope-ui-select.nvim'
     },
     config = function()
-      config = require("plugins.configs.telescope")
-      require("telescope").setup(config)
+      local default = require("plugins.configs.telescope")
+      require("telescope").setup(default)
       require("telescope").load_extension("ui-select")
     end,
   },
@@ -108,7 +108,7 @@ local Plugins = {
     dependencies = {
       "mfussenegger/nvim-dap",
     },
-    config = function(_, opts)
+    config = function(_, _)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
       require("core.utils").load_mappings("dap_python")
