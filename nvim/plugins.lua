@@ -28,6 +28,7 @@ local Plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "bash",
         "git_config",
         "git_rebase",
         "gitattributes",
