@@ -21,6 +21,7 @@ local Plugins = {
         "stylua",
         -- random
         "efm",
+        "ltex-ls",
       }
     }
   },

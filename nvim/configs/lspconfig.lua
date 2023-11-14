@@ -37,6 +37,11 @@ lspconfig.taplo.setup({
   filetypes = { "toml" }
 })
 
+lspconfig.ltex.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 local efmls_config = {
   filetypes = vim.tbl_keys(languages),
   settings = {
