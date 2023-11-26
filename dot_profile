@@ -43,3 +43,5 @@ if [ -n "$(ls "$HOME"/.config/profile.d 2>/dev/null)" ]; then
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
+
+export MANPAGER="nvim +Man!"
