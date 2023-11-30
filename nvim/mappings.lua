@@ -83,6 +83,12 @@ M.lspconfig = {
 			end,
 			"Floating diagnostic",
 		},
+		["<localleader>r"] = {
+			function()
+				require("nvchad.renamer").open()
+			end,
+			"LSP Rename",
+		},
 		["gr"] = {
 			function()
 				require("telescope.builtin").lsp_references()

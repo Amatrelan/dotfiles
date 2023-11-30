@@ -42,6 +42,11 @@ lspconfig.ltex.setup({
   capabilities = capabilities,
 })
 
+lspconfig.nushell.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 local efmls_config = {
   filetypes = vim.tbl_keys(languages),
   settings = {

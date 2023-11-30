@@ -1,5 +1,5 @@
 layer=top
-anchor=bottom-right
+anchor=top-center
 font=Hack Nerd Font 10
 background-color=#0f0f0f
 text-color=#f0f0f0
@@ -8,13 +8,14 @@ margin=0,30,30
 padding=10
 border-size=2
 border-color=#262626
-progress-color=over #262626ff
+progress-color=over #262626
 border-radius=5
-default-timeout=10000
+default-timeout=5000
 group-by=summary
+format=<b>%a</b>\n%s\n%b
 
 [grouped]
-format=<b>%s</b>\n%b
+format=(%g)<b>%a</b>\n%s\n%b
 
 [mode=do-not-disturb]
 invisible=1

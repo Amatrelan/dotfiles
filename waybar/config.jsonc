@@ -122,9 +122,9 @@
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
-		"on-click": "bash volume.sh mute",
-		"on-scroll-up": "bash volume.sh up",
-		"on-scroll-down": "bash volume.sh down",
+		"on-click": "volume.nu -m",
+		"on-scroll-up": "volume.nu -u",
+		"on-scroll-down": "volume.nu -d",
 		"scroll-step": 5,
 		"on-click-right": "pavucontrol"
 	},

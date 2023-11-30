@@ -39,6 +39,7 @@ local Plugins = {
 				"python",
 				"regex",
 				"rust",
+				"org",
 			},
 		},
 	},
@@ -177,6 +178,83 @@ local Plugins = {
 		config = function()
 			require("neogit").setup()
 			require("core.utils").load_mappings("neogit")
+		end,
+	},
+	{
+		"akinsho/git-conflict.nvim",
+		config = function()
+			require("git-conflict").setup()
+		end,
+	},
+	{
+		"sindrets/diffview.nvim", -- optional
+		lazy = false,
+	},
+	{
+		"LhKipp/nvim-nu",
+		lazy = false,
+		build = "TSInstall nu",
+		config = function()
+			require("nu").setup({
+				use_lsp_features = false,
+			})
+		end,
+	},
+	{
+		"nvim-orgmode/orgmode",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		event = "VeryLazy",
+		config = function()
+			require("orgmode").setup_ts_grammar()
+
+			require("nvim-treesitter.configs").setup({
+				highlight = {
+					enable = true,
+					additional_vim_regex_highlighting = { "org" },
+				},
+			})
+
+			local org_root = "~/org/"
+
+			require("orgmode").setup({
+				org_agenda_files = "~/org/**/*",
+				org_default_notes_file = org_root .. "/refile.org",
+
+				org_capture_templates = {
+					w = {
+						description = "Work",
+						subtemplates = {
+							j = {
+								description = "journal",
+								template = "\n*** %<%T>\n\n%?",
+								target = org_root .. "work/journal/%<%Y-%m-%d>.org",
+							},
+							t = {
+								description = "todo",
+								template = "\n*** TODO %?\n%a",
+								target = org_root .. "work/todo.org",
+							},
+						},
+					},
+					p = {
+						description = "Personal",
+						subtemplates = {
+							j = {
+								description = "journal",
+								template = "\n*** %<%T>\n\n%?",
+								target = org_root .. "journal/%<%Y-%m-%d>.org",
+							},
+							t = {
+								description = "todo",
+								template = "\n*** TODO %?\n%a",
+								target = org_root .. "todo.org",
+							},
+						},
+					},
+				},
+			})
 		end,
 	},
 }

@@ -14,3 +14,13 @@
 
 [pull]
 	rebase = true
+
+[merge]
+  tool = nvimdiff
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
