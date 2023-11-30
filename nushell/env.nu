@@ -45,7 +45,4 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/ama/.cargo/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/ama/.local/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/bin')
-
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/nix/var/nix/profiles/default/bin/nix')
-
 $env.MANPAGER = "nvim +Man!"
