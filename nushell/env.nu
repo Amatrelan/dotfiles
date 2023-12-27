@@ -2,22 +2,25 @@
 #
 # version = "0.84.0"
 
-$env.STARSHIP_SHELL = "nu"
+$env.EDITOR = "helix"
 
-def create_left_prompt [] {
-    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
-}
+$env.MOZ_ENABLE_WAYLAND = 1
+$env.MOZ_DBUS_REMOTE = 1
+$env.GTK_CSD = 1
 
-# Use nushell functions to define your right and left prompt
-$env.PROMPT_COMMAND = { || create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = ""
+$env.QT_QPA_PLATFORM = "wayland"
+$env.QT_QPA_PLATFORMTHEME = "qt5ct"
+$env.QT_WAYLAND_DISABLE_WINDOWDECORATION = 1
 
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
-$env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
-$env.PROMPT_MULTILINE_INDICATOR = "::: "
+$env._JAVA_AWT_WM_NONREPARENTING = 1
+
+$env.SHELL = "/usr/bin/nu"
+$env.ZEIT_DB = "$HOME/config/zeit.db"
+
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+$env.XDG_CACHE_HOME = $"($env.HOME)/.cache"
+$env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
+$env.XDG_STATE_HOME = $"($env.HOME)/.local/state"
 
 $env.ENV_CONVERSIONS = {
     "PATH": {
@@ -46,3 +49,6 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/ama/.cargo/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/ama/.local/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/bin')
 $env.MANPAGER = "nvim +Man!"
+
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu

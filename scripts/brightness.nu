@@ -1,14 +1,17 @@
+#!/bin/env nu
+
 def main [
   --up (-u) # Increase brightness
   --down (-d) # Decrease brightness
+  --amount (-a) = 10 # Amount of change
 ] {
   if $up {
     # Write notification someday
-    ray increase 5
+    /home/ama/.cargo/bin/ray increase $amount
   }
 
   if $down {
-    ray decrease 5
+    /home/ama/.cargo/bin/ray decrease $amount
   }
 }
 

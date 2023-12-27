@@ -36,6 +36,7 @@ def main [
     if ($val | is-empty) {
       tmux new
     } else {
+      print $val.id
       tmux attach -t $val.id
     }
   }

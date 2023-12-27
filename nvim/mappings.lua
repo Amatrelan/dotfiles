@@ -77,11 +77,11 @@ M.lspconfig = {
 			end,
 			"Floating diagnostic",
 		},
-		["<localleader>d"] = {
+		["cD"] = {
 			function()
 				require("telescope.builtin").diagnostics()
 			end,
-			"Floating diagnostic",
+			"diagnostics list",
 		},
 		["<localleader>r"] = {
 			function()

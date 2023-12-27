@@ -7,8 +7,8 @@ def main [
 
   let core_list: list = [
     "kitty"
-    "mako"
     "libnotify"
+    "mako"
     "neovim"
     "pamixer"
     "ripgrep"

@@ -2,7 +2,8 @@
     border: none;
     border-radius: 0px;
     /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
-    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    /* font-family: Iosevka, FontAwesome, Noto Sans CJK; */
+    font-family: Monaspace Krypton, FontAwesome, Noto Sans CJK;
     font-size: 14px;
     font-style: normal;
     min-height: 0;
@@ -23,6 +24,7 @@ window#waybar {
   font-weight: normal;
   font-style: normal;
 }
+
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;

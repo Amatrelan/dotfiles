@@ -1,3 +1,5 @@
 # Nushell don't have way to configure history path and 
 # I don't want my history to be stored on git so here we go
 history.txt
+
+helix/runtime/

@@ -721,3 +721,7 @@ $env.config = {
         }
     ]
 }
+
+alias hx = helix
+
+use ~/.cache/starship/init.nu

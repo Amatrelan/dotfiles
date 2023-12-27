@@ -73,3 +73,11 @@ to = "$HOME/.config/swayidle"
 [links.tmux]
 from = "tmux"
 to = "$HOME/.config/tmux"
+
+[links.zellij]
+from = "zellij"
+to = "/home/ama/.config/zellij/"
+
+[links.helix]
+from = "helix"
+to = "$HOME/.config/helix/"
